@@ -1,0 +1,107 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<div class="container">
+    <div class="panel panel-default">        
+        <div class="panel-body">
+            <button id="btnIncluir" class="btn btn-primary" data-toggle="modal" data-target="#modalIncluir">Incluir</button>
+        </div>
+    </div>
+    <h1>Alunos</h1>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Aluno</th>
+                    <th>Nota</th>
+                    <th>Presença</th>
+                    <th>Observação</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div id="semAlunos">
+            <p><b>Nenhum aluno cadastrado até o momento!</b></p>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalIncluir" tabindex="-1" role="dialog" aria-labelledby="modalIncluirLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalIncluirLabel">Incluir Aluno</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="formIncluir">
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" class="form-control" id="nome" name="nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="nota">Nota:</label>
+                        <input type="text" class="form-control" id="nota" name="nota">
+                    </div>
+                    <div class="form-group">
+                        <label for="presenca">Presença:</label>
+                        <input type="text" class="form-control" id="presenca" name="presenca">
+                    </div>
+                    <div class="form-group">
+                        <label for="observacao">Observação:</label>
+                        <input type="text" class="form-control" id="observacao" name="observacao">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnSalvar">Salvar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnCancelar">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="modalEditarLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalEditarLabel">Editar Aluno</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="nomeEditar">Nome:</label>
+                        <input type="text" class="form-control" id="nomeEditar">
+                    </div>
+                    <div class="form-group">
+                        <label for="notaEditar">Nota:</label>
+                        <input type="text" class="form-control" id="notaEditar">
+                    </div>
+                    <div class="form-group">
+                        <label for="presencaEditar">Presença:</label>
+                        <input type="text" class="form-control" id="presencaEditar">
+                    </div>
+                    <div class="form-group">
+                        <label for="observacaoEditar">Observação:</label>
+                        <textarea class="form-control" id="observacaoEditar" rows="3"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnCancelarEditar">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="btnSalvarEdicao">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
